@@ -7,18 +7,82 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
+// Layers
+#define BASE 0
+#define NAV  1
+#define NUM  2
+#define FUNC 3
+
+// Home row mods macro
+#define HRML(k1,k2,k3,k4) &ht LGUI K1 &ht LALT K2 &ht LCTRL k3 &ht LSHIFT k4
+#define HRMR(k1,k2,k3,k4) &ht RSHIFT K1 &ht RCTRL K2 &ht RALT k3 &ht RGUI k4
+
 / {
+    behaviours {
+        ht: hold_tap {
+            label = "hold_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            global-quick-tap;
+            bindings = <&kp>, <&kp>;
+        };
+
+        dotcom: dot_coma {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
+            mods = <(MOD_LSFT)>;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
 
-        // This is a sample keymap intended to be replaced with your own
         base_layer {
             bindings = <
-                &kp Q     &kp W     &kp E     &kp R     &kp T     &kp Y     &kp U     &kp I     &kp O     &kp P
-                &kp A     &kp S     &kp D     &kp F     &kp G     &kp H     &kp J     &kp K     &kp L     &kp SEMI
-                &kp Z     &kp X     &kp C     &kp V     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
-                                              &kp TAB   &kp BSPC  &kp SPACE &kp ENTER
+                &kp Q     &kp W     &kp E     &kp R     &kp T            &kp Y         &kp U     &kp I     &kp O     &kp P
+               HRML(A,        S,        D,        F)    &kp G            &kp H        HRMR(J,        K,        L,        SEMI)
+                &kp Z     &kp X     &kp C     &kp V     &kp B            &kp N         &kp M     &kp COMMA &kp DOT   &kp SLASH
+                                       &lt FUNC TAB     &kp SPACE      &lt NAV ENTER   &lt NUM BSPC
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+                &none     &none      &kp TILDE  &none      &none          &none     &none     &none     &none     &none
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHIFT &none          &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+                &none     &none      &none      &none      &none          &none     &none     &none     &none     &none
+                                                &none      &none         &lt NAV ENTER    &none
+            >;
+        };
+
+        num_layer {
+            bindings = <
+                &none     &none      &none      &none       &none          &kp EQUAL   &kp 7     &kp 8     &kp 9     &kt SQT
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHIFT  &dotcom        &kp MINUS   &kp 4     &kp 5     &kp 6     &none
+                &none     &none      &none      &none       &none          &kp 0       &kp 1     &kp 2     &kp 3     &none
+                                                &none       &none          &none       &LT NUM BSPC
+            >;
+        };
+
+        func_layer {
+            bindings = <
+                &none     &kp C_PREV &kp C_PP   &kp C_NEXT  &kp C_VOL_UP          &kp ESC   &kp F7     &kp F8     &kp F9     &kp F12
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHIFT  &kp C_VOL_DN          &none     &kp F4     &kp F5     &kp F6     &kp F11
+                &none     &none      &none      &none       &none                 &none     &kp F1     &kp F2     &kp F3     &kp F10
+                                             &lt FUNC TAB   &none                 &none     &kp DEL
             >;
         };
 
