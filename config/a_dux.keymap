@@ -14,19 +14,28 @@
 #define FUNC 3
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LGUI K1 &ht LALT K2 &ht LCTRL k3 &ht LSHIFT k4
-#define HRMR(k1,k2,k3,k4) &ht RSHIFT K1 &ht RCTRL K2 &ht RALT k3 &ht RGUI k4
+//#define HRML(k1,k2,k3,k4) &ht LGUI K1 &ht LALT K2 &ht LCTRL k3 &ht LSHFT k4
+//#define HRMR(k1,k2,k3,k4) &ht RSHFT K1 &ht RCTRL K2 &ht RALT k3 &ht RGUI k4
 
 / {
     behaviours {
-        ht: hold_tap {
-            label = "hold_tap";
+//        ht: hold_tap {
+//            label = "hold_tap";
+//            compatible = "zmk,behavior-hold-tap";
+//            #binding-cells = <2>;
+//            flavor = "tap-preferred";
+//            tapping-term-ms = <220>;
+//            quick-tap-ms = <150>;
+//            global-quick-tap;
+//            bindings = <&kp>, <&kp>;
+//        };
+//
+        hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
 
@@ -52,10 +61,10 @@
 
         base_layer {
             bindings = <
-                &kp Q     &kp W     &kp E     &kp R     &kp T            &kp Y         &kp U     &kp I     &kp O     &kp P
-               HRML(A,        S,        D,        F)    &kp G            &kp H        HRMR(J,        K,        L,        SEMI)
-                &kp Z     &kp X     &kp C     &kp V     &kp B            &kp N         &kp M     &kp COMMA &kp DOT   &kp SLASH
-                                       &lt FUNC TAB     &kp SPACE      &lt NAV ENTER   &lt NUM BSPC
+                &kp Q      &kp W      &kp E       &kp R       &kp T            &kp Y   &kp U       &kp I       &kp O      &kp P
+                &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G            &kp H   &hn RSHFT J &hn RCTRL K &hn RALT L &hn RGUI SEMI
+                &kp Z      &kp X      &kp C       &kp V       &kp B            &kp N   &kp M       &kp COMMA   &kp DOT    &kp SLASH
+                                            &lt FUNC TAB     &kp SPACE       &lt NAV ENTER   &lt NUM BSPC
             >;
         };
 
