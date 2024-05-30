@@ -127,7 +127,7 @@
         };
         combo_CAPS_WORD {
             timeout-ms = <50>;
-            key-positions = <13, 16>;
+            key-positions = <13 16>;
             require-prior-idle-ms = <200>;
             bindings = <&caps_word>;
             layers = <BASE>;
@@ -137,6 +137,15 @@
 
     };
 
+    macros {
+        macros_SK_LGUI {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =  <&macro_press   &kp LGUI>,
+                        <&macro_tap     &kp RSHFT>,
+                        <&macro_release &sk LGUI>;
+        };
+    };
 
     keymap {
         compatible = "zmk,keymap";
@@ -176,5 +185,14 @@
                                             &lt FUNC TAB   &none                 &none      &mo BASE
             >;
         };
+
+        //trans_layer {
+        //    bindings = <
+        //        &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+        //        &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+        //        &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+        //                                &trans  &trans      &trans  &mo BASE
+        //    >;
+        //};
     };
 };
