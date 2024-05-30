@@ -125,8 +125,13 @@
             bindings = <&kp KP_DOT>;
             layers = <BASE NUM>;
         };
-        // todo: R_SHIFT - caps_world     - double_tap. (but still allowing triple tap for IDEA's purpose)
-            //             caps_word      - both SHIFT tap
+        combo_CAPS_WORD {
+            timeout-ms = <50>;
+            key-positions = <13, 16>;
+            require-prior-idle-ms = <200>;
+            bindings = <&caps_word>;
+            layers = <BASE>;
+        };
         // todo: R_SHIFT - sticky_MOD_key - double tap while holding mod-key to stick it.
         // todo: R_SHIFT - toggle_layer   - tap while holding a &lt-button to toggle it
 
