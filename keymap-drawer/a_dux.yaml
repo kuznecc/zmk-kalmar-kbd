@@ -186,3 +186,6 @@ combos:
 - p: [27, 28]
   k: KP DOT
   l: [base, num]
+- p: [13, 16]
+  k: '&caps_word'
+  l: [base]
