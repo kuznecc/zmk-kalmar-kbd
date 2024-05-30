@@ -9,8 +9,8 @@
 
 // Layers
 #define BASE 0
-#define NAV  1
-#define NUM  2
+#define NUM  1
+#define NAV  2
 #define FUNC 3
 
 / {
@@ -25,22 +25,112 @@
             bindings = <&kp>, <&kp>;
         };
 
-        dotcom: dot_coma {
-            compatible = "zmk,behavior-mod-morph";
-            #binding-cells = <0>;
-            bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
-            mods = <MOD_LSFT>;
-        };
+//        dotcom: dot_coma {
+//            compatible = "zmk,behavior-mod-morph";
+//            #binding-cells = <0>;
+//            bindings = <&kp KP_DOT>, <&kp KP_COMMA>;
+//            mods = <MOD_LSFT>;
+//        };
     };
 
     combos {
         compatible = "zmk,combos";
-        combo_esc {
+        combo_ESC {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
+            layers = <BASE NUM NAV>;
         };
+        combo_TILDE {
+            timeout-ms = <50>;
+            key-positions = <3 4>;
+            bindings = <&kp TILDE>;
+            layers = <BASE>;
+        };
+        combo_TAB {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp TAB>;
+            layers = <BASE>;
+        };
+        combo_BACKSPACE {
+            timeout-ms = <50>;
+            key-positions = <5 6>;
+            bindings = <&kp BSPC>;
+            layers = <BASE NUM NAV>;
+        };
+        combo_DELETE {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp DEL>;
+            layers = <BASE NUM NAV>;
+        };
+        combo_PLUS_EQ {
+            timeout-ms = <50>;
+            key-positions = <5 15>;
+            bindings = <&kp EQUAL>;
+            layers = <BASE NUM>;
+        };
+        combo_MINUS {
+            timeout-ms = <50>;
+            key-positions = <15 25>;
+            bindings = <&kp MINUS>;
+            layers = <BASE NUM>;
+        };
+        combo_SINGLE_QUOTE {
+            timeout-ms = <50>;
+            key-positions = <8 18>;
+            bindings = <&kp SINGLE_QUOTE>;
+            layers = <BASE>;
+        };
+        combo_LBRACKET {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp LEFT_BRACKET>;
+            layers = <BASE NUM>;
+        };
+        combo_RBRACKET {
+            timeout-ms = <50>;
+            key-positions = <17 18>;
+            bindings = <&kp RIGHT_BRACKET>;
+            layers = <BASE NUM>;
+        };
+        combo_BACKSLASH {
+            timeout-ms = <50>;
+            key-positions = <18 19>;
+            bindings = <&kp BACKSLASH>;
+            layers = <BASE>;
+        };
+        combo_LEFT_PARENTHESIS {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp LEFT_PARENTHESIS>;
+            layers = <BASE NUM>;
+        };
+        combo_RIGHT_PARENTHESIS {
+            timeout-ms = <50>;
+            key-positions = <7 8>;
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            layers = <BASE NUM>;
+        };
+        combo_COMMA {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp KP_COMMA>;
+            layers = <BASE NUM>;
+        };
+        combo_DOT {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp KP_DOT>;
+            layers = <BASE NUM>;
+        };
+        // todo: R_SHIFT - caps_world     - double_tap. (but still allowing triple tap for IDEA's purpose)
+        // todo: R_SHIFT - sticky_MOD_key - double tap while holding mod-key to stick it.
+        // todo: R_SHIFT - toggle_layer   - tap while holding a &lt-button to toggle it
+
     };
+
 
     keymap {
         compatible = "zmk,keymap";
@@ -50,34 +140,34 @@
                 &kp Q      &kp W      &kp E       &kp R       &kp T            &kp Y   &kp U       &kp I       &kp O      &kp P
                 &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G            &kp H   &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI
                 &kp Z      &kp X      &kp C       &kp V       &kp B            &kp N   &kp M       &kp COMMA   &kp DOT    &lt NUM SLASH
-                                           &lt FUNC TAB     &kp SPACE       &lt NAV ENTER   &kp BSPC
-            >;
-        };
-
-        nav_layer {
-            bindings = <
-                &none     &none      &kp TILDE  &none      &none          &none     &none     &none     &none     &none
-                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHIFT &none          &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
-                &none     &none      &none      &none      &none          &none     &none     &none     &none     &none
-                                               &none      &kp SPACE       &lt NAV ENTER  &kp DEL
+                                             &lt FUNC TAB   &kp SPACE     &lt NAV ENTER   &kp RSHFT
             >;
         };
 
         num_layer {
             bindings = <
-                &none     &none      &none      &none       &none          &kp EQUAL   &kp N7     &kp N8     &kp N9     &none
-                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHIFT  &dotcom        &kp MINUS   &kp N4     &kp N5     &kp N6     &none
+                &none     &none      &none      &none       &none          &none       &kp N7     &kp N8     &kp N9     &none
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &dotcom         &none       &kp N4     &kp N5     &kp N6     &none
                 &none     &none      &none      &none       &none          &kp N0      &kp N1     &kp N2     &kp N3     &lt NUM SLASH
-                                               &none        &none          &hm RSHIFT SQT  &dotcom
+                                               &none    &kp  SPACE        &none  &mo BASE
+            >;
+        };
+
+        nav_layer {
+            bindings = <
+                &none     &none      &none     &none      &none           &none     &none     &none     &none     &none
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+                &none     &none      &none      &none      &none          &none     &none     &none     &none     &none
+                                             &none      &kp SPACE       &lt NAV ENTER  &mo BASE
             >;
         };
 
         func_layer {
             bindings = <
-                &none     &kp C_PREV &kp C_PP   &kp C_NEXT  &kp C_VOL_UP          &kp ESC   &kp F7     &kp F8     &kp F9     &kp F12
-                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHIFT  &kp C_VOL_DN          &none     &kp F4     &kp F5     &kp F6     &kp F11
+                &none     &kp C_PREV &kp C_PP   &kp C_NEXT  &kp C_VOL_UP          &none     &kp F7     &kp F8     &kp F9     &kp F12
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &kp C_VOL_DN           &none     &kp F4     &kp F5     &kp F6     &kp F11
                 &none     &none      &none      &none       &none                 &none     &kp F1     &kp F2     &kp F3     &kp F10
-                                            &lt FUNC TAB   &none                 &none      &kp DEL
+                                            &lt FUNC TAB   &none                 &none      &mo BASE
             >;
         };
     };
