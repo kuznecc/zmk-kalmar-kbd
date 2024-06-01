@@ -69,7 +69,7 @@ layers:
   - TAB
   - SPACE
   - ''
-  - base
+  - {t: base, h: toggle}
   nav:
   - ''
   - ''
@@ -104,7 +104,7 @@ layers:
   - ''
   - SPACE
   - {t: ENTER, h: nav, type: held}
-  - base
+  - {t: base, h: toggle}
   func:
   - ''
   - PREV
@@ -139,13 +139,13 @@ layers:
   - {t: TAB, h: func, type: held}
   - ''
   - ''
-  - base
+  - {t: base, h: toggle}
   NO_HR_BASE:
   - Q
-  - {t: W, type: held}
+  - W
   - E
   - R
-  - {t: T, type: held}
+  - T
   - Y
   - U
   - I
@@ -174,7 +174,7 @@ layers:
   - {t: TAB, h: func}
   - SPACE
   - {t: ENTER, h: nav}
-  - base
+  - {t: base, h: toggle}
 combos:
 - p: [0, 1]
   k: ESC
@@ -222,7 +222,7 @@ combos:
   k: KP DOT
   l: [base, num]
 - p: [1, 4]
-  k: NO_HR_BASE
+  k: {t: NO_HR_BASE, h: toggle}
   l: [base]
 - p: [13, 16]
   k: '&caps_word'
