@@ -37,9 +37,9 @@ layers:
   - RSHFT
   num:
   - ''
-  - ''
-  - ''
-  - ''
+  - Sft+ 7
+  - Sft+ 8
+  - Sft+ 9
   - ''
   - ''
   - '7'
@@ -47,9 +47,9 @@ layers:
   - '9'
   - ''
   - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
+  - {t: Sft+ 4, h: LALT}
+  - {t: Sft+ 5, h: LCTRL}
+  - {t: Sft+ 6, h: LSHFT}
   - ''
   - ''
   - '4'
@@ -57,16 +57,16 @@ layers:
   - '6'
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Sft+ 1
+  - Sft+ 2
+  - Sft+ 3
+  - Sft+ 0
   - '0'
   - '1'
   - '2'
   - '3'
   - {t: /, h: num, type: held}
-  - ''
+  - TAB
   - SPACE
   - ''
   - base
@@ -140,6 +140,41 @@ layers:
   - ''
   - ''
   - base
+  NO_HR_BASE:
+  - Q
+  - {t: W, type: held}
+  - E
+  - R
+  - {t: T, type: held}
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - {t: /, h: num}
+  - {t: TAB, h: func}
+  - SPACE
+  - {t: ENTER, h: nav}
+  - base
 combos:
 - p: [0, 1]
   k: ESC
@@ -181,11 +216,14 @@ combos:
   k: )
   l: [base, num]
 - p: [26, 27]
-  k: KP COMMA
+  k: Sft+ 6
   l: [base, num]
 - p: [27, 28]
   k: KP DOT
   l: [base, num]
+- p: [1, 4]
+  k: NO_HR_BASE
+  l: [base]
 - p: [13, 16]
   k: '&caps_word'
   l: [base]
