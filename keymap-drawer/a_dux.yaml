@@ -297,3 +297,6 @@ combos:
 - p: [13, 16]
   k: '&caps_word'
   l: [base]
+- p: [22, 24]
+  k: BT CLR ALL
+  l: [bluetooth]
