@@ -136,6 +136,13 @@
             bindings = <&caps_word>;
             layers = <BASE>;
         };
+        combo_BT_CLEAR_ALL {
+            timeout-ms = <50>;
+            key-positions = <22 24>;
+            require-prior-idle-ms = <200>;
+            bindings = <&bt BT_CLR_ALL>;
+            layers = <BT>;
+        };
 
     };
 
