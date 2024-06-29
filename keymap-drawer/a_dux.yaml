@@ -209,7 +209,7 @@ layers:
   - ''
   - ''
   - ''
-  - {t: base, h: toggle}
+  - {t: bluetooth, h: toggle}
   NO_HR_BASE:
   - Q
   - W
