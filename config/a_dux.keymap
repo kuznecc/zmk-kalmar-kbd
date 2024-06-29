@@ -14,8 +14,8 @@
 #define NUM  2
 #define NAV  3
 #define FUNC 4
-#define NO_HR_BASE 5
-#define BT 6
+#define BT 5
+#define NO_HR_BASE 6
 
 / {
     behaviors {
@@ -194,21 +194,21 @@
             >;
         };
 
-        NO_HR_BASE_layer {
-            bindings = <
-                &kp Q   &kp W   &kp E   &kp R   &kp T           &kp Y   &kp U   &kp I       &kp O   &kp P
-                &kp A   &kp S   &kp D   &kp F   &kp G           &kp H   &kp J   &kp K       &kp L   &kp SEMI
-                &kp Z   &kp X   &kp C   &kp V   &kp B           &kp N   &kp M   &kp COMMA   &kp DOT &lt NUM SLASH
-                                &lt FUNC TAB   &kp SPACE     &lt NAV ENTER   &to BASE
-            >;
-        };
-
         bluetooth_layer {
             bindings = <
                 &none &none &none       &none &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
                 &none &none &bt BT_DISC &none &none        &none         &none         &none         &none         &none
                 &none &none &bt BT_CLR  &none &none        &none         &none         &none         &none         &none
                                        &none   &none      &none   &to BASE
+            >;
+        };
+
+        NO_HR_BASE_layer {
+            bindings = <
+                &kp Q   &kp W   &kp E   &kp R   &kp T           &kp Y   &kp U   &kp I       &kp O   &kp P
+                &kp A   &kp S   &kp D   &kp F   &kp G           &kp H   &kp J   &kp K       &kp L   &kp SEMI
+                &kp Z   &kp X   &kp C   &kp V   &kp B           &kp N   &kp M   &kp COMMA   &kp DOT &lt NUM SLASH
+                                       &none   &kp SPACE     &kp ENTER   &to BASE
             >;
         };
 
