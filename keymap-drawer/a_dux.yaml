@@ -34,7 +34,7 @@ layers:
   - {t: TAB, h: func}
   - SPACE
   - {t: ENTER, h: nav}
-  - '&lt 1'
+  - multi
   multi:
   - ''
   - ''
@@ -69,7 +69,7 @@ layers:
   - ''
   - ''
   - ''
-  - '&lt 1'
+  - {t: multi, type: held}
   num:
   - ''
   - Sft+ 7
