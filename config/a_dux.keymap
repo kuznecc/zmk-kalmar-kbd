@@ -6,13 +6,16 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 
 // Layers
 #define BASE 0
-#define NUM  1
-#define NAV  2
-#define FUNC 3
-#define NO_HR_BASE 4
+#define MULTI 1
+#define NUM  2
+#define NAV  3
+#define FUNC 4
+#define NO_HR_BASE 5
+#define BT 6
 
 / {
     behaviors {
@@ -133,9 +136,6 @@
             bindings = <&caps_word>;
             layers = <BASE>;
         };
-        // todo: R_SHIFT - sticky_MOD_key - double tap while holding mod-key to stick it.
-        // todo: R_SHIFT - toggle_layer   - tap while holding a &lt-button to toggle it
-        // todo: sticky mod key : [hold A => hold LGUI] -> [hold LGUI + &kp RSHFT] => &sk LGUI
 
     };
 
@@ -147,7 +147,16 @@
                 &kp Q      &kp W      &kp E       &kp R       &kp T            &kp Y   &kp U       &kp I       &kp O      &kp P
                 &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G            &kp H   &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI
                 &kp Z      &kp X      &kp C       &kp V       &kp B            &kp N   &kp M       &kp COMMA   &kp DOT    &lt NUM SLASH
-                                             &lt FUNC TAB   &kp SPACE     &lt NAV ENTER   &kp RSHFT
+                                             &lt FUNC TAB   &kp SPACE     &lt NAV ENTER   &lt MULTI
+            >;
+        };
+
+        multi_layer {
+            bindings = <
+                &none      &none      &none      &none      &kp ESC        &kp BSPC  &kp TAB   &none   &kp GRAVE &kp LS(LG(N4))
+                &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none          &none     &to NAV   &to NUM &to FUNC  &none
+                &kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &none          &none     &none     &none   &none     &to BT
+                                                      &none   &none      &none   &lt MULTI
             >;
         };
 
@@ -162,9 +171,9 @@
 
         nav_layer {
             bindings = <
-                &none     &none      &none     &none      &none           &none     &none     &none     &none     &none
-                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none
-                &none     &none      &none      &none      &none          &none     &none     &none     &none     &none
+                &none     &none      &none     &none      &none           &none     &kp LA(TAB)  &none   &kp LA(LS(TAB)) &none
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &kp LEFT  &kp DOWN     &kp UP  &kp RIGHT       &none
+                &none     &none      &none      &none      &none          &none     &none        &none   &none           &none
                                              &none      &kp SPACE       &lt NAV ENTER  &to BASE
             >;
         };
@@ -184,6 +193,15 @@
                 &kp A   &kp S   &kp D   &kp F   &kp G           &kp H   &kp J   &kp K       &kp L   &kp SEMI
                 &kp Z   &kp X   &kp C   &kp V   &kp B           &kp N   &kp M   &kp COMMA   &kp DOT &lt NUM SLASH
                                 &lt FUNC TAB   &kp SPACE     &lt NAV ENTER   &to BASE
+            >;
+        };
+
+        bluetooth_layer {
+            bindings = <
+                &none &none &none       &none &none        &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+                &none &none &bt BT_DISC &none &none        &none         &none         &none         &none         &none
+                &none &none &bt BT_CLR  &none &none        &none         &none         &none         &none         &none
+                                       &none   &none      &none   &none
             >;
         };
 
