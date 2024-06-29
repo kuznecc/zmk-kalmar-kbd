@@ -34,7 +34,42 @@ layers:
   - {t: TAB, h: func}
   - SPACE
   - {t: ENTER, h: nav}
-  - RSHFT
+  - '&lt 1'
+  multi:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ESC
+  - BSPC
+  - TAB
+  - ''
+  - '`'
+  - Sft+Gui+ 4
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - ''
+  - {t: nav, h: toggle}
+  - {t: num, h: toggle}
+  - {t: func, h: toggle}
+  - ''
+  - Gui+ Z
+  - Gui+ X
+  - Gui+ C
+  - Gui+ V
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: bluetooth, h: toggle}
+  - ''
+  - ''
+  - ''
+  - '&lt 1'
   num:
   - ''
   - Sft+ 7
@@ -77,20 +112,20 @@ layers:
   - ''
   - ''
   - ''
+  - Alt+ TAB
   - ''
-  - ''
-  - ''
+  - Alt+Sft+ TAB
   - ''
   - LGUI
   - LALT
   - LCTRL
   - LSHFT
   - ''
-  - ''
   - LEFT
   - DOWN
   - UP
   - RIGHT
+  - ''
   - ''
   - ''
   - ''
@@ -175,6 +210,41 @@ layers:
   - SPACE
   - {t: ENTER, h: nav}
   - {t: base, h: toggle}
+  bluetooth:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - {t: BT, h: '2'}
+  - {t: BT, h: '3'}
+  - {t: BT, h: '4'}
+  - ''
+  - ''
+  - BT DISC
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - BT CLR
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
 combos:
 - p: [0, 1]
   k: ESC
