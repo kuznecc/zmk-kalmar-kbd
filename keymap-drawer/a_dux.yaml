@@ -188,7 +188,7 @@ layers:
   - {t: BT, h: '4'}
   - ''
   - ''
-  - BT DISC
+  - ''
   - ''
   - ''
   - ''
@@ -201,15 +201,15 @@ layers:
   - BT CLR
   - ''
   - ''
+  - {t: BT DISC, h: '0'}
+  - {t: BT DISC, h: '0'}
+  - {t: BT DISC, h: '0'}
+  - {t: BT DISC, h: '0'}
+  - {t: BT DISC, h: '0'}
   - ''
   - ''
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - {t: bluetooth, h: toggle}
+  - {t: base, h: toggle}
   NO_HR_BASE:
   - Q
   - W
