@@ -51,7 +51,7 @@ layers:
   - LCTRL
   - LSHFT
   - ''
-  - ENTER
+  - ''
   - {t: nav, h: toggle}
   - {t: num, h: toggle}
   - {t: func, h: toggle}
@@ -61,7 +61,7 @@ layers:
   - Gui+ C
   - Gui+ V
   - ''
-  - ''
+  - ENTER
   - ''
   - ''
   - ''
@@ -104,7 +104,7 @@ layers:
   - TAB
   - SPACE
   - {t: base, h: toggle}
-  - ''
+  - {t: BSPC, h: nav}
   nav:
   - ''
   - ''
@@ -136,10 +136,10 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - TAB
   - SPACE
   - {t: base, h: toggle}
-  - {type: held}
+  - {t: BSPC, type: held}
   func:
   - ''
   - PREV
@@ -171,7 +171,7 @@ layers:
   - F2
   - F3
   - F10
-  - {t: TAB, h: func, type: held}
+  - {type: held}
   - ''
   - {t: base, h: toggle}
   - ''
@@ -241,10 +241,10 @@ layers:
   - ','
   - .
   - {t: /, h: num}
-  - ''
+  - ENTER
   - SPACE
   - {t: base, h: toggle}
-  - ENTER
+  - BSPC
 combos:
 - p: [0, 1]
   k: ESC
@@ -284,9 +284,6 @@ combos:
   l: [base, num]
 - p: [7, 8]
   k: )
-  l: [base, num]
-- p: [26, 27]
-  k: Sft+ 6
   l: [base, num]
 - p: [27, 28]
   k: KP DOT
