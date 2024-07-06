@@ -674,6 +674,12 @@ path.combo {
 <tspan x="616" dy="-0.6em">KP</tspan><tspan x="616" dy="1.2em">DOT</tspan>
 </text>
 </g>
+<g class="combo combopos-10">
+<path d="M588,157 l-37,-1" class="combo"/>
+<path d="M588,157 l37,1" class="combo"/>
+<rect rx="6" ry="6" x="574" y="144" width="28" height="26" class="combo"/>
+<text x="588" y="157" class="combo tap">0</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 1008)" class="layer-nav">

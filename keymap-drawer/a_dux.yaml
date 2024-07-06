@@ -297,3 +297,6 @@ combos:
 - p: [22, 24]
   k: BT CLR ALL
   l: [bluetooth]
+- p: [26, 28]
+  k: '0'
+  l: [num]
