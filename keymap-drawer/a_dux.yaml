@@ -146,7 +146,7 @@ layers:
   - PP
   - NEXT
   - VOL UP
-  - ''
+  - BRI INC
   - F7
   - F8
   - F9
@@ -156,7 +156,7 @@ layers:
   - LCTRL
   - LSHFT
   - VOL DN
-  - ''
+  - BRI DEC
   - F4
   - F5
   - F6
@@ -164,8 +164,8 @@ layers:
   - ''
   - ''
   - ''
-  - ''
-  - ''
+  - '&mkp LCLK'
+  - '&mkp RCLK'
   - ''
   - F1
   - F2
