@@ -34,7 +34,7 @@ layers:
   - {t: TAB, h: func}
   - SPACE
   - multi
-  - {t: BSPC, h: nav}
+  - BSPC
   multi:
   - ''
   - ''
@@ -104,7 +104,7 @@ layers:
   - TAB
   - SPACE
   - {t: base, h: toggle}
-  - {t: BSPC, h: nav}
+  - BSPC
   nav:
   - ''
   - ''
@@ -139,7 +139,7 @@ layers:
   - TAB
   - SPACE
   - {t: base, h: toggle}
-  - {t: BSPC, type: held}
+  - BSPC
   func:
   - ''
   - PREV
@@ -249,15 +249,9 @@ combos:
 - p: [0, 1]
   k: ESC
   l: [base, num, nav]
-- p: [3, 4]
-  k: '~'
+- p: [10, 31]
+  k: Gui+ SPACE
   l: [base]
-- p: [13, 14]
-  k: TAB
-  l: [base]
-- p: [5, 6]
-  k: BSPC
-  l: [base, num, nav]
 - p: [8, 9]
   k: DEL
   l: [base, num, nav]
