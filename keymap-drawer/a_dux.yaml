@@ -113,7 +113,7 @@ layers:
   - ''
   - ''
   - Alt+ TAB
-  - ''
+  - UP
   - Alt+Sft+ TAB
   - ''
   - LGUI
@@ -121,15 +121,15 @@ layers:
   - LCTRL
   - LSHFT
   - ''
+  - ''
   - LEFT
   - DOWN
-  - UP
   - RIGHT
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Z
+  - X
+  - C
+  - V
   - ''
   - ''
   - ''
@@ -251,6 +251,9 @@ combos:
   l: [base, num, nav]
 - p: [10, 31]
   k: Gui+ SPACE
+  l: [base]
+- p: [10, 30]
+  k: Gui+ TAB
   l: [base]
 - p: [8, 9]
   k: DEL
