@@ -50,8 +50,16 @@
         };
         combo_LANG {
             timeout-ms = <150>;
+            require-prior-idle-ms = <200>;
             key-positions = <10 31>;
             bindings = <&kp LG(SPACE)>;
+            layers = <BASE>;
+        };
+        combo_CMD_TAB {
+            timeout-ms = <150>;
+            require-prior-idle-ms = <200>;
+            key-positions = <10 30>;
+            bindings = <&kp LG(TAB)>;
             layers = <BASE>;
         };
         combo_DELETE {
@@ -177,9 +185,9 @@
 
         nav_layer {
             bindings = <
-                &none     &none      &none     &none      &none           &none     &kp LA(TAB)  &none   &kp LA(LS(TAB)) &none
-                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &kp LEFT  &kp DOWN     &kp UP  &kp RIGHT       &none
-                &none     &none      &none      &none      &none          &none     &none        &none   &none           &none
+                &none     &none      &none      &none      &none           &none    &kp LA(TAB) &kp UP   &kp LA(LS(TAB)) &none
+                &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &none     &kp LEFT    &kp DOWN &kp RIGHT       &none
+                &kp Z      &kp X     &kp C      &kp V      &none          &none     &none       &none    &none           &none
                                              &kp TAB    &kp SPACE       &to BASE  &kp BSPC
             >;
         };
