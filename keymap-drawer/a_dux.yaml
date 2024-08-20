@@ -112,9 +112,9 @@ layers:
   - ''
   - ''
   - ''
-  - Alt+ TAB
+  - Gui+ TAB
   - UP
-  - Alt+Sft+ TAB
+  - Gui+Sft+ TAB
   - ''
   - LGUI
   - LALT
