@@ -50,14 +50,14 @@
         };
         combo_LANG {
             timeout-ms = <150>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <150>;
             key-positions = <10 31>;
             bindings = <&kp LG(SPACE)>;
             layers = <BASE>;
         };
         combo_CMD_TAB {
             timeout-ms = <150>;
-            require-prior-idle-ms = <200>;
+            require-prior-idle-ms = <150>;
             key-positions = <10 30>;
             bindings = <&kp LG(TAB)>;
             layers = <BASE>;
