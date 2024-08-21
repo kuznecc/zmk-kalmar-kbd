@@ -44,6 +44,7 @@
         compatible = "zmk,combos";
         combo_ESC {
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
             layers = <BASE NUM NAV>;
@@ -64,6 +65,7 @@
         };
         combo_DELETE {
             timeout-ms = <50>;
+            require-prior-idle-ms = <150>;
             key-positions = <8 9>;
             bindings = <&kp DEL>;
             layers = <BASE NUM NAV>;
@@ -88,12 +90,14 @@
         };
         combo_LBRACKET {
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
             key-positions = <16 17>;
             bindings = <&kp LEFT_BRACKET>;
             layers = <BASE NUM>;
         };
         combo_RBRACKET {
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
             key-positions = <17 18>;
             bindings = <&kp RIGHT_BRACKET>;
             layers = <BASE NUM>;
@@ -106,12 +110,14 @@
         };
         combo_LEFT_PARENTHESIS {
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
             key-positions = <6 7>;
             bindings = <&kp LEFT_PARENTHESIS>;
             layers = <BASE NUM>;
         };
         combo_RIGHT_PARENTHESIS {
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
             key-positions = <7 8>;
             bindings = <&kp RIGHT_PARENTHESIS>;
             layers = <BASE NUM>;
