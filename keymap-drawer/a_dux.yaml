@@ -112,9 +112,9 @@ layers:
   - ''
   - ''
   - ''
-  - Gui+ TAB
+  - ''
   - UP
-  - Gui+Sft+ TAB
+  - ''
   - ''
   - LGUI
   - LALT
@@ -249,9 +249,6 @@ combos:
 - p: [0, 1]
   k: ESC
   l: [base, num, nav]
-- p: [10, 31]
-  k: Gui+ SPACE
-  l: [base]
 - p: [10, 30]
   k: Gui+ TAB
   l: [base]
