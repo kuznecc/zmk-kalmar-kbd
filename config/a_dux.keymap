@@ -38,16 +38,6 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-        tapToBase: behavior {
-            compatible = "zmk,behavior-hold-tap";
-            label = "Switch layer only by tapping";
-            #binding-cells = <2>;
-
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-
-            bindings = <&mo BASE>, <&none>;
-        };
     };
 
     combos {
@@ -188,7 +178,7 @@
                 &none    &kp LS(N7)     &kp LS(N8)      &kp LS(N9)      &none           &none   &kp N7  &kp N8  &kp N9  &none
                 &kp LGUI &hm LALT LS(N4)&hm LCTRL LS(N5)&hm LSHFT LS(N6)&none           &none   &kp N4  &kp N5  &kp N6  &none
                 &none    &kp LS(N1)     &kp LS(N2)      &kp LS(N3)      &kp LS(N0)      &kp N0  &kp N1  &kp N2  &kp N3  &lt NUM SLASH
-                                                               &kp TAB  &kp SPACE    &tapToBase  &kp BSPC
+                                                               &kp TAB  &kp SPACE    &to BASE  &kp BSPC
             >;
         };
 
@@ -197,7 +187,7 @@
                 &none     &none      &none      &none      &none          &none     &none     &kp UP   &none     &none
                 &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &none     &kp LEFT  &kp DOWN &kp RIGHT &none
                 &kp Z      &kp X     &kp C      &kp V      &none          &none     &none     &none    &none     &none
-                                             &kp TAB    &kp SPACE       &tapToBase &kp BSPC
+                                             &kp TAB    &kp SPACE       &to BASE  &kp BSPC
             >;
         };
 
