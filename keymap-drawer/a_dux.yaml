@@ -103,10 +103,43 @@ layers:
   - {t: /, h: num, type: held}
   - TAB
   - SPACE
-  - '&tapToBase'
+  - {t: base, h: toggle}
   - BSPC
-  nav: ['', '', '', '', '', '', '', UP, '', '', LGUI, LALT, LCTRL, LSHFT, '', '', LEFT, DOWN, RIGHT, '', Z, X, C, V, '', '', '', '', '', '', TAB, SPACE, '&tapToBase',
-    BSPC]
+  nav:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - UP
+  - ''
+  - ''
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - ''
+  - LEFT
+  - DOWN
+  - RIGHT
+  - ''
+  - Z
+  - X
+  - C
+  - V
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - TAB
+  - SPACE
+  - {t: base, h: toggle}
+  - BSPC
   func:
   - ''
   - PREV
