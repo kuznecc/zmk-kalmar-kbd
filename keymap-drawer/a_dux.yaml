@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: a_dux}
+layout: {zmk_keyboard: a_dux}
 layers:
   base:
   - Q
@@ -32,7 +32,7 @@ layers:
   - .
   - {t: /, h: num}
   - {t: TAB, h: func}
-  - SPACE
+  - {t: SPACE, h: no_hr_base}
   - multi
   - BSPC
   multi:
@@ -45,7 +45,7 @@ layers:
   - TAB
   - ''
   - '`'
-  - Sft+Gui+ 4
+  - Sft+Gui+4
   - LGUI
   - LALT
   - LCTRL
@@ -56,25 +56,25 @@ layers:
   - {t: num, h: toggle}
   - {t: func, h: toggle}
   - ''
-  - Gui+ Z
-  - Gui+ X
-  - Gui+ C
-  - Gui+ V
+  - Gui+Z
+  - Gui+X
+  - Gui+C
+  - Gui+V
   - ''
   - ENTER
   - ''
   - ''
   - ''
-  - {t: bluetooth, h: toggle}
+  - {t: bt, h: toggle}
   - ''
   - ''
   - {t: multi, type: held}
   - ''
   num:
   - ''
-  - Sft+ 7
-  - Sft+ 8
-  - Sft+ 9
+  - Sft+7
+  - Sft+8
+  - Sft+9
   - ''
   - ''
   - '7'
@@ -82,9 +82,9 @@ layers:
   - '9'
   - ''
   - LGUI
-  - {t: Sft+ 4, h: LALT}
-  - {t: Sft+ 5, h: LCTRL}
-  - {t: Sft+ 6, h: LSHFT}
+  - {t: Sft+4, h: LALT}
+  - {t: Sft+5, h: LCTRL}
+  - {t: Sft+6, h: LSHFT}
   - ''
   - ''
   - '4'
@@ -92,17 +92,17 @@ layers:
   - '6'
   - ''
   - ''
-  - Sft+ 1
-  - Sft+ 2
-  - Sft+ 3
-  - Sft+ 0
+  - Sft+1
+  - Sft+2
+  - Sft+3
+  - Sft+0
   - '0'
   - '1'
   - '2'
   - '3'
   - {t: /, h: num, type: held}
-  - TAB
-  - SPACE
+  - {t: TAB, h: num}
+  - {t: SPACE, h: num}
   - {t: base, h: toggle}
   - BSPC
   nav:
@@ -136,8 +136,8 @@ layers:
   - ''
   - ''
   - ''
-  - TAB
-  - SPACE
+  - {t: TAB, h: nav}
+  - {t: SPACE, h: nav}
   - {t: base, h: toggle}
   - BSPC
   func:
@@ -163,7 +163,7 @@ layers:
   - F11
   - ''
   - ''
-  - Sft+Alt+Gui+ W
+  - Sft+Alt+Gui+W
   - '&mkp LCLK'
   - '&mkp RCLK'
   - ''
@@ -175,7 +175,7 @@ layers:
   - ''
   - {t: base, h: toggle}
   - ''
-  bluetooth:
+  bt:
   - ''
   - ''
   - ''
@@ -210,7 +210,7 @@ layers:
   - ''
   - {t: base, h: toggle}
   - ''
-  NO_HR_BASE:
+  no_hr_base_toggle:
   - Q
   - W
   - E
@@ -245,12 +245,47 @@ layers:
   - SPACE
   - {t: base, h: toggle}
   - BSPC
+  no_hr_base:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - {t: /, h: num}
+  - ''
+  - {type: held}
+  - ''
+  - BSPC
 combos:
 - p: [0, 1]
   k: ESC
   l: [base, num, nav]
 - p: [10, 30]
-  k: Gui+ TAB
+  k: Gui+TAB
   l: [base]
 - p: [8, 9]
   k: DEL
@@ -283,14 +318,17 @@ combos:
   k: KP DOT
   l: [base, num]
 - p: [1, 4]
-  k: {t: NO_HR_BASE, h: toggle}
+  k: {t: no_hr_base_toggle, h: toggle}
+  l: [base]
+- p: [31, 32]
+  k: {t: no_hr_base_toggle, h: toggle}
   l: [base]
 - p: [13, 16]
   k: '&caps_word'
   l: [base]
 - p: [22, 24]
   k: BT CLR ALL
-  l: [bluetooth]
+  l: [bt]
 - p: [26, 28]
   k: '0'
   l: [num]
