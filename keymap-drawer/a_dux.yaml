@@ -30,9 +30,9 @@ layers:
   - M
   - ','
   - .
-  - {t: /, h: num}
+  - /
   - {t: TAB, h: func}
-  - {t: SPACE, h: no_hr_base}
+  - {t: SPACE, h: no_hr_right}
   - multi
   - BSPC
   multi:
@@ -41,8 +41,8 @@ layers:
   - ''
   - ''
   - ESC
-  - BSPC
-  - TAB
+  - ''
+  - ''
   - ''
   - '`'
   - Sft+Gui+4
@@ -50,17 +50,17 @@ layers:
   - LALT
   - LCTRL
   - LSHFT
-  - ''
+  - ESC
   - ''
   - {t: nav, h: toggle}
   - {t: num, h: toggle}
   - {t: func, h: toggle}
   - ''
-  - Gui+Z
-  - Gui+X
-  - Gui+C
-  - Gui+V
   - ''
+  - ''
+  - ''
+  - ESC
+  - ESC
   - ENTER
   - ''
   - ''
@@ -100,7 +100,7 @@ layers:
   - '1'
   - '2'
   - '3'
-  - {t: /, h: num, type: held}
+  - {t: /, h: num}
   - {t: TAB, h: num}
   - {t: SPACE, h: num}
   - {t: base, h: toggle}
@@ -163,7 +163,7 @@ layers:
   - F11
   - ''
   - ''
-  - Sft+Alt+Gui+W
+  - ''
   - '&mkp LCLK'
   - '&mkp RCLK'
   - ''
@@ -173,7 +173,7 @@ layers:
   - F10
   - {type: held}
   - ''
-  - {t: base, h: toggle}
+  - ''
   - ''
   bt:
   - ''
@@ -245,37 +245,37 @@ layers:
   - SPACE
   - {t: base, h: toggle}
   - BSPC
-  no_hr_base:
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - A
-  - S
-  - D
-  - F
-  - G
+  no_hr_right:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - H
   - J
   - K
   - L
-  - ;
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - ','
-  - .
-  - {t: /, h: num}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - ''
   - {type: held}
   - ''
@@ -318,9 +318,6 @@ combos:
   k: KP DOT
   l: [base, num]
 - p: [1, 4]
-  k: {t: no_hr_base_toggle, h: toggle}
-  l: [base]
-- p: [31, 32]
   k: {t: no_hr_base_toggle, h: toggle}
   l: [base]
 - p: [13, 16]
