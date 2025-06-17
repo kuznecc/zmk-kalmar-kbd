@@ -16,7 +16,7 @@ PARSED_KBD_KEYMAP_FILE="${OUTPUT_ARTIFACTS_PATH}/parsed_keymap.yaml"
 OUTPUT_SVG_FILE="${OUTPUT_ARTIFACTS_PATH}/keymap.svg"
 
 # --- Script Variables ---
-ZMK_DOCKER_IMAGE="zmkfirmware/zmk-dev-arm:stable"
+ZMK_DOCKER_IMAGE="zmkfirmware/zmk-dev-arm:3.5-branch"
 ZMK_DOCKER_CONTAINER_NAME="zmk-builder-container"
 INNER_SCRIPT_NAME="_docker_build_steps_split_update.sh"
 INNER_SCRIPT_PATH="${OUTPUT_ARTIFACTS_PATH}/${INNER_SCRIPT_NAME}"
@@ -78,7 +78,7 @@ build_one_shield() {
     echo "Executing: west build -b \${board_name} -d \${build_dir_name} -- -DSHIELD=\${shield_name}"
     west build -s app -p always -b "\${board_name}" -d "\${build_dir_name}" -- \\
         -DSHIELD="\${shield_name}" \\
-        -DZMK_CONFIG="\${ZMK_CONFIG_DIR_IN_CONTAINER}" \\
+        -DZMK_CONFIG="\${ZMK_CONFIG_DIR_IN_CONTAINER}/config" \\
         -DKEYMAP_FILE="\${ZMK_CONFIG_DIR_IN_CONTAINER}/config/a_dux.keymap"
 
     local firmware_source_path="/workspaces/zmk/\${build_dir_name}/zephyr/zmk.uf2"

@@ -166,10 +166,10 @@
 
         multi_layer {
             bindings = <
-                &none      &none      &none      &none      &kp ESC        &none     &none     &none   &kp GRAVE &kp LS(LG(N4))
-                &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &kp ESC        &none     &to NAV   &to NUM &to FUNC  &none
-                &none      &none      &mo MOUSE  &kp ESC    &kp ESC        &kp ENTER &none     &none   &none     &to BT
-                                                      &none   &none      &mo MULTI   &none
+                &none      &none      &none      &none      &none        &none     &none     &none   &kp GRAVE &kp LS(LG(N4))
+                &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none        &none     &to NAV   &to NUM &to MOUSE &none
+                &none      &none      &none      &kp ESC    &none        &kp ENTER &none     &none   &none     &to BT
+                                                     &none   &none      &mo MULTI   &none
             >;
         };
 
@@ -229,10 +229,10 @@
 
         mouse_layer {
             bindings = <
-                &trans   &trans   &trans   &trans   &trans           &msc SCRL_UP   &none          &mmv MOVE_UP   &none           &none
-                &trans   &trans   &trans   &trans   &trans           &msc SCRL_DOWN &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
-                &trans   &trans   &trans   &mkp LCLK   &mkp RCLK     &trans   &trans   &trans   &trans &trans
-                                                 &none  &none     &none   &none
+                &none   &none   &none   &none     &none           &msc SCRL_UP   &none           &mmv MOVE_UP   &none           &none
+                &none   &none   &none   &none     &none           &msc SCRL_DOWN &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
+                &none   &none   &none   &mkp LCLK &mkp RCLK       &msc SCRL_LEFT &msc SCRL_RIGHT &none   &none &none
+                                               &none  &none     &to BASE &none
             >;
         };
 
