@@ -62,9 +62,9 @@ layers:
   - ESC
   - ''
   - ENTER
+  - Ctl+LEFT
   - ''
-  - ''
-  - ''
+  - Ctl+RIGHT
   - {t: bt, h: toggle}
   - ''
   - ''
@@ -319,9 +319,6 @@ combos:
 - p: [0, 1]
   k: ESC
   l: [base, num, nav]
-- p: [10, 30]
-  k: Gui+TAB
-  l: [base]
 - p: [8, 9]
   k: DEL
   l: [base, num, nav]
