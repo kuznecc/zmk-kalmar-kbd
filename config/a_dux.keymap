@@ -161,8 +161,8 @@
             bindings = <
                 &none      &none      &none      &none      &none        &none     &none        &none   &kp GRAVE     &kp LS(LG(N4))
                 &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none        &none     &to NAV      &to NUM &to MOUSE     &none
-                &none      &none      &none      &kp ESC    &none        &kp ENTER &kp LC(LEFT) &none   &kp LC(RIGHT) &to BT
-                                                     &none   &none      &mo MULTI   &none
+                &none      &none      &none      &none      &none        &kp ENTER &kp LC(LEFT) &none   &kp LC(RIGHT) &to BT
+                                                  &kp ESC   &kp LC(E)  &none   &none
             >;
         };
 
