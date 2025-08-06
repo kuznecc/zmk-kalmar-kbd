@@ -11,12 +11,12 @@
 
 // Layers
 #define BASE 0
-#define MULTI 1
-#define NUM  2
-#define NAV  3
-#define FUNC 4
-#define BT 5
-#define NO_HR_BASE 6
+#define NO_HR_BASE 1
+#define MULTI 2
+#define NUM  3
+#define NAV  4
+#define FUNC 5
+#define BT 6
 #define MOUSE 7
 
 / {
@@ -163,6 +163,15 @@
             >;
         };
 
+        no_hr_base_layer {
+            bindings = <
+                &kp Q   &kp W   &kp E   &kp R   &kp T           &kp Y   &kp U   &kp I       &kp O   &kp P
+                &kp A   &kp S   &kp D   &kp F   &kp G           &kp H   &kp J   &kp K       &kp L   &kp SEMI
+                &kp Z   &kp X   &kp C   &kp V   &kp B           &kp N   &kp M   &kp COMMA   &kp DOT &lt NUM SLASH
+                                     &mo FUNC  &kp SPACE     &to BASE   &kp BSPC
+            >;
+        };
+
         multi_layer {
             bindings = <
                 &kp ESC    &none      &none      &none      &none        &none     &none        &none   &kp GRAVE     &kp LS(LG(N4))
@@ -205,15 +214,6 @@
                 &none &none &none       &none &none        &none         &none         &none         &none         &none
                 &none &none &bt BT_CLR  &none &none        &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4
                                      &none   &to BASE    &to BASE   &none
-            >;
-        };
-
-        no_hr_base_layer {
-            bindings = <
-                &kp Q   &kp W   &kp E   &kp R   &kp T           &kp Y   &kp U   &kp I       &kp O   &kp P
-                &kp A   &kp S   &kp D   &kp F   &kp G           &kp H   &kp J   &kp K       &kp L   &kp SEMI
-                &kp Z   &kp X   &kp C   &kp V   &kp B           &kp N   &kp M   &kp COMMA   &kp DOT &lt NUM SLASH
-                                    &kp LALT  &kp SPACE     &to BASE   &kp BSPC
             >;
         };
 
