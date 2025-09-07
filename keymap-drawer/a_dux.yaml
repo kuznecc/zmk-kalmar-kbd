@@ -32,11 +32,46 @@ layers:
   - .
   - /
   - {t: TAB, h: func}
-  - {t: SPACE, h: no_hr_right}
+  - SPACE
   - multi
   - BSPC
+  no_hr_base:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - S
+  - D
+  - F
+  - G
+  - H
+  - J
+  - K
+  - L
+  - ;
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - {t: /, h: num}
+  - func
+  - SPACE
+  - {t: base, h: toggle}
+  - BSPC
   multi:
-  - ''
+  - ESC
   - ''
   - ''
   - ''
@@ -59,19 +94,19 @@ layers:
   - ''
   - ''
   - ''
-  - ESC
+  - ''
   - ''
   - ENTER
   - Ctl+LEFT
-  - ''
+  - Ctl+F4
   - Ctl+RIGHT
   - {t: bt, h: toggle}
   - ''
-  - ''
-  - {t: multi, type: held}
+  - Ctl+E
+  - {type: held}
   - ''
   num:
-  - ''
+  - ESC
   - Sft+7
   - Sft+8
   - Sft+9
@@ -100,13 +135,13 @@ layers:
   - '1'
   - '2'
   - '3'
-  - {t: /, h: num}
+  - {t: /, h: num, type: held}
   - {t: TAB, h: num}
   - {t: SPACE, h: num}
   - {t: base, h: toggle}
   - BSPC
   nav:
-  - ''
+  - ESC
   - ''
   - ''
   - ''
@@ -141,7 +176,7 @@ layers:
   - {t: base, h: toggle}
   - BSPC
   func:
-  - ''
+  - ESC
   - PREV
   - PP
   - NEXT
@@ -161,7 +196,7 @@ layers:
   - F5
   - F6
   - F11
-  - ''
+  - Gui+Z
   - ''
   - ''
   - '&mkp LCLK'
@@ -174,7 +209,7 @@ layers:
   - {type: held}
   - ''
   - ''
-  - ''
+  - Alt+BSPC
   bt:
   - ''
   - ''
@@ -207,79 +242,9 @@ layers:
   - {t: BT DISC, h: '3'}
   - {t: BT DISC, h: '4'}
   - ''
-  - ''
+  - {t: base, h: toggle}
   - {t: base, h: toggle}
   - ''
-  no_hr_base_toggle:
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - A
-  - S
-  - D
-  - F
-  - G
-  - H
-  - J
-  - K
-  - L
-  - ;
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - ','
-  - .
-  - {t: /, h: num}
-  - ENTER
-  - SPACE
-  - {t: base, h: toggle}
-  - BSPC
-  no_hr_right:
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - H
-  - J
-  - K
-  - L
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - ''
-  - {type: held}
-  - ''
-  - BSPC
   mouse:
   - ''
   - ''
@@ -318,7 +283,7 @@ layers:
 combos:
 - p: [0, 1]
   k: ESC
-  l: [base, num, nav]
+  l: [base, num, nav, no_hr_base]
 - p: [8, 9]
   k: DEL
   l: [base, num, nav]
@@ -350,10 +315,13 @@ combos:
   k: KP DOT
   l: [base, num]
 - p: [1, 4]
-  k: {t: no_hr_base_toggle, h: toggle}
+  k: {t: no_hr_base, h: toggle}
   l: [base]
 - p: [13, 16]
   k: '&caps_word'
+  l: [base]
+- p: [20, 24]
+  k: {t: bt, h: toggle}
   l: [base]
 - p: [22, 24]
   k: BT CLR ALL
