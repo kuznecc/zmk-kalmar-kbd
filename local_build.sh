@@ -11,6 +11,7 @@ KBD_KEYMAP_FILE="config/a_dux.keymap"
 USER_CONFIG_REPO_PATH="$(pwd)"
 OUTPUT_ARTIFACTS_PATH="${USER_CONFIG_REPO_PATH}/_local_build_artifacts"
 ZMK_SOURCE_DIR="${OUTPUT_ARTIFACTS_PATH}/zmk"
+ZMK_BRANCH="v0.3.0"
 PYTHON_VENV_DIR="${OUTPUT_ARTIFACTS_PATH}/python_venv"
 PARSED_KBD_KEYMAP_FILE="${OUTPUT_ARTIFACTS_PATH}/parsed_keymap.yaml"
 OUTPUT_SVG_FILE="${OUTPUT_ARTIFACTS_PATH}/keymap.svg"
@@ -38,7 +39,7 @@ rm -rf "${OUTPUT_SVG_FILE}"
 # ======================================================================================================================
 # 1. Clone or Update the ZMK firmware repository locally
 if [ ! -d "${ZMK_SOURCE_DIR}" ]; then
-  git clone https://github.com/zmkfirmware/zmk.git "${ZMK_SOURCE_DIR}"
+  git clone --branch "${ZMK_BRANCH}" --single-branch --depth 1 https://github.com/zmkfirmware/zmk.git  "${ZMK_SOURCE_DIR}"
 else
   (cd "${ZMK_SOURCE_DIR}" && git pull) || { echo "Failed to update ZMK repository. Aborting."; exit 1; }
 fi
@@ -99,6 +100,15 @@ build_one_shield() {
 # Build for a split keyboard (left and right halves)
 build_one_shield "${BOARD_NAME}" "${SHIELD_LEFT_NAME}" "left"
 build_one_shield "${BOARD_NAME}" "${SHIELD_RIGHT_NAME}" "right"
+
+# Build BLE reset firmware
+echo "--------------------------------------------------"
+echo "Building: settings_reset"
+west build -s app -p always -b "${BOARD_NAME}" -d build_reset -- \\
+    -DSHIELD=settings_reset
+cp /workspaces/zmk/build_reset/zephyr/zmk.uf2 "\${INTERNAL_CONTAINER_ARTIFACTS_PATH}/reset_ble.uf2"
+echo "Done: reset_ble.uf2"
+echo "--------------------------------------------------"
 INNER_EOF
 
 chmod +x "${INNER_SCRIPT_PATH}"
