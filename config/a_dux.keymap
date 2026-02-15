@@ -184,9 +184,9 @@
         num_layer {
             bindings = <
                 &kp ESC  &kp LS(N7)     &kp LS(N8)      &kp LS(N9)      &none           &none   &kp N7  &kp N8  &kp N9  &none
-                &kp LGUI &hm LALT LS(N4)&hm LCTRL LS(N5)&hm LSHFT LS(N6)&none           &none   &kp N4  &kp N5  &kp N6  &none
-                &none    &kp LS(N1)     &kp LS(N2)      &kp LS(N3)      &kp LS(N0)      &kp N0  &kp N1  &kp N2  &kp N3  &lt NUM SLASH
-                                                        &lt NUM TAB  &lt NUM SPACE    &to BASE  &kp BSPC
+                &kp LGUI &hm LALT LS(N4)&hm LCTRL LS(N5)&hm LSHFT LS(N6)&kp COMMA       &none   &kp N4  &kp N5  &kp N6  &kp SEMI
+                &none    &kp LS(N1)     &kp LS(N2)      &kp LS(N3)      &kp DOT         &kp N0  &kp N1  &kp N2  &kp N3  &lt NUM SLASH
+                                                        &ht_lk FUNC TAB  &kp SPACE    &to BASE  &kp BSPC
             >;
         };
 
@@ -195,7 +195,7 @@
                 &kp ESC   &none      &none      &none      &none          &none     &none     &kp UP   &none     &none
                 &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &none     &kp LEFT  &kp DOWN &kp RIGHT &none
                 &kp Z      &kp X     &kp C      &kp V      &none          &none     &none     &none    &none     &none
-                                     &lt NAV TAB    &lt NAV SPACE       &to BASE  &kp BSPC
+                                        &ht_lk FUNC TAB  &kp SPACE       &to BASE  &kp BSPC
             >;
         };
 
