@@ -120,24 +120,24 @@ layers:
   - {t: Sft+4, h: LALT}
   - {t: Sft+5, h: LCTRL}
   - {t: Sft+6, h: LSHFT}
-  - ''
+  - ','
   - ''
   - '4'
   - '5'
   - '6'
-  - ''
+  - ;
   - ''
   - Sft+1
   - Sft+2
   - Sft+3
-  - Sft+0
+  - .
   - '0'
   - '1'
   - '2'
   - '3'
   - {t: /, h: num, type: held}
-  - {t: TAB, h: num}
-  - {t: SPACE, h: num}
+  - {t: TAB, h: func}
+  - SPACE
   - {t: base, h: toggle}
   - BSPC
   nav:
@@ -171,8 +171,8 @@ layers:
   - ''
   - ''
   - ''
-  - {t: TAB, h: nav}
-  - {t: SPACE, h: nav}
+  - {t: TAB, h: func}
+  - SPACE
   - {t: base, h: toggle}
   - BSPC
   func:
