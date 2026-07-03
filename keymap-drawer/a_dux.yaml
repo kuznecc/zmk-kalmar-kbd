@@ -70,41 +70,6 @@ layers:
   - SPACE
   - {t: base, h: toggle}
   - BSPC
-  multi:
-  - ESC
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - '`'
-  - Sft+Gui+4
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
-  - ''
-  - ''
-  - {t: nav, h: toggle}
-  - {t: num, h: toggle}
-  - {t: mouse, h: toggle}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ENTER
-  - Ctl+LEFT
-  - Ctl+F4
-  - Ctl+RIGHT
-  - {t: bt, h: toggle}
-  - ''
-  - Ctl+E
-  - {type: held}
-  - ''
   num:
   - ESC
   - Sft+7
@@ -138,7 +103,7 @@ layers:
   - {t: /, h: num, type: held}
   - {t: TAB, h: func}
   - SPACE
-  - {t: base, h: toggle}
+  - '&multi_base'
   - BSPC
   nav:
   - ESC
@@ -173,7 +138,7 @@ layers:
   - ''
   - {t: TAB, h: func}
   - SPACE
-  - {t: base, h: toggle}
+  - '&multi_base'
   - BSPC
   func:
   - ESC
@@ -279,6 +244,41 @@ layers:
   - ''
   - ''
   - {t: base, h: toggle}
+  - ''
+  multi:
+  - ESC
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '`'
+  - Sft+Gui+4
+  - LGUI
+  - LALT
+  - LCTRL
+  - LSHFT
+  - ''
+  - ''
+  - {t: nav, h: toggle}
+  - {t: num, h: toggle}
+  - {t: mouse, h: toggle}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ENTER
+  - Ctl+LEFT
+  - Ctl+F4
+  - Ctl+RIGHT
+  - {t: bt, h: toggle}
+  - ''
+  - Ctl+E
+  - {type: held}
   - ''
 combos:
 - p: [0, 1]
