@@ -12,12 +12,12 @@
 // Layers
 #define BASE 0
 #define NO_HR_BASE 1
-#define MULTI 2
-#define NUM  3
-#define NAV  4
-#define FUNC 5
-#define BT 6
-#define MOUSE 7
+#define NUM  2
+#define NAV  3
+#define FUNC 4
+#define BT 5
+#define MOUSE 6
+#define MULTI 7
 
 / {
     behaviors {
@@ -36,6 +36,19 @@
             tapping-term-ms = <200>;
             flavor = "hold-preferred";
             bindings = <&mo>, <&kp>;
+        };
+    };
+
+    macros {
+        // hold -> MULTI momentary over BASE; release -> land on BASE (not the layer pressed from)
+        multi_base: multi_base {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&to BASE>
+                , <&macro_press &mo MULTI>
+                , <&macro_pause_for_release>
+                , <&macro_release &mo MULTI>;
         };
     };
 
@@ -172,21 +185,12 @@
             >;
         };
 
-        multi_layer {
-            bindings = <
-                &kp ESC    &none      &none      &none      &none        &none     &none        &none      &kp GRAVE     &kp LS(LG(N4))
-                &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none        &none     &to NAV      &to NUM    &to MOUSE     &none
-                &none      &none      &none      &none      &none        &kp ENTER &kp LC(LEFT) &kp LC(F4) &kp LC(RIGHT) &to BT
-                                                   &none   &kp LC(E)  &none   &none
-            >;
-        };
-
         num_layer {
             bindings = <
                 &kp ESC  &kp LS(N7)     &kp LS(N8)      &kp LS(N9)      &none           &none   &kp N7  &kp N8  &kp N9  &none
                 &kp LGUI &hm LALT LS(N4)&hm LCTRL LS(N5)&hm LSHFT LS(N6)&kp COMMA       &none   &kp N4  &kp N5  &kp N6  &kp SEMI
                 &none    &kp LS(N1)     &kp LS(N2)      &kp LS(N3)      &kp DOT         &kp N0  &kp N1  &kp N2  &kp N3  &lt NUM SLASH
-                                                        &ht_lk FUNC TAB  &kp SPACE    &to BASE  &kp BSPC
+                                                        &ht_lk FUNC TAB  &kp SPACE    &multi_base  &kp BSPC
             >;
         };
 
@@ -195,7 +199,7 @@
                 &kp ESC   &none      &none      &none      &none          &none     &none     &kp UP   &none     &none
                 &kp LGUI  &kp LALT   &kp LCTRL  &kp LSHFT  &none          &none     &kp LEFT  &kp DOWN &kp RIGHT &none
                 &kp Z      &kp X     &kp C      &kp V      &none          &none     &none     &none    &none     &none
-                                        &ht_lk FUNC TAB  &kp SPACE       &to BASE  &kp BSPC
+                                        &ht_lk FUNC TAB  &kp SPACE       &multi_base  &kp BSPC
             >;
         };
 
@@ -223,6 +227,15 @@
                 &none   &none   &none   &none     &none           &msc SCRL_DOWN &mmv MOVE_LEFT  &mmv MOVE_DOWN &mmv MOVE_RIGHT &none
                 &none   &none   &none   &mkp LCLK &mkp RCLK       &msc SCRL_LEFT &msc SCRL_RIGHT &none   &none &none
                                                &none  &none     &to BASE &none
+            >;
+        };
+
+        multi_layer {
+            bindings = <
+                &kp ESC    &none      &none      &none      &none        &none     &none        &none      &kp GRAVE     &kp LS(LG(N4))
+                &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none        &none     &to NAV      &to NUM    &to MOUSE     &none
+                &none      &none      &none      &none      &none        &kp ENTER &kp LC(LEFT) &kp LC(F4) &kp LC(RIGHT) &to BT
+                                                   &none   &kp LC(E)  &none   &none
             >;
         };
 
