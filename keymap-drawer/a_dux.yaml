@@ -111,7 +111,7 @@ layers:
   - ''
   - ''
   - ''
-  - ''
+  - PG UP
   - ''
   - UP
   - ''
@@ -121,7 +121,7 @@ layers:
   - LCTRL
   - LSHFT
   - ''
-  - ''
+  - PG DN
   - LEFT
   - DOWN
   - RIGHT
@@ -277,7 +277,7 @@ layers:
   - Ctl+RIGHT
   - {t: bt, h: toggle}
   - ''
-  - Ctl+E
+  - Ctl+Sft+E
   - {type: held}
   - ''
 combos:
