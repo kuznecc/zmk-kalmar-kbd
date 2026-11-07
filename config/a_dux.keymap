@@ -235,7 +235,7 @@
                 &kp ESC    &none      &none      &none      &none        &none     &none        &none      &kp GRAVE     &kp LS(LG(N4))
                 &kp LGUI   &kp LALT   &kp LCTRL  &kp LSHFT  &none        &none     &to NAV      &to NUM    &to MOUSE     &none
                 &none      &none      &none      &none      &none        &kp ENTER &kp LC(LEFT) &kp LC(F4) &kp LC(RIGHT) &to BT
-                                                   &none   &kp LC(E)  &none   &none
+                                                &none   &kp LC(LS(E))  &none   &none
             >;
         };
 
